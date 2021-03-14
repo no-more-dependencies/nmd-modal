@@ -1,0 +1,103 @@
+nmd-modal-container {
+	--nmd-modal-width: 600px;
+	--nmd-modal-margin: .6em;
+	--nmd-modal-margin-top-bottom: var(--nmd-modal-margin);
+	--nmd-modal-margin-left-right: var(--nmd-modal-margin);
+	--nmd-modal-margin-top: var(--nmd-modal-margin-top-bottom);
+	--nmd-modal-margin-bottom: var(--nmd-modal-margin-top-bottom);
+	--nmd-modal-margin-right: var(--nmd-modal-margin-left-right);
+	--nmd-modal-margin-left: var(--nmd-modal-margin-left-right);
+
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+nmd-modal-container[hidden] {
+	display: none;
+}
+
+nmd-modal-container nmd-modal {
+	display: none;
+}
+
+nmd-modal-container nmd-modal:first-child {
+	display: inline-block;
+}
+
+nmd-modal {
+	border-radius: .3em;
+	min-width: 15em;
+	display: inline-block;
+	color: white;
+	margin: var(--nmd-modal-margin-top) var(--nmd-modal-margin-right) var(--nmd-modal-margin-bottom) var(--nmd-modal-margin-left);
+	animation: __nmd-modal__modalIn .3s linear;
+
+	input, select, textarea {
+		display: block;
+		margin: 0.4em 0;
+	}
+
+	/* default type info*/
+	background-color: rgb(36, 130, 218);
+
+	/* Message element */
+	[data-nmd-message] {
+		background-color: rgba(0, 0, 0, .1);
+		padding: 2em 1.3em;
+	}
+
+	[data-nmd-buttons] {
+		padding: 1em 1.3em;
+		text-align: center;
+	}
+
+	button {
+		background-color: rgba(0, 0, 0, 0.1);
+		font-family: inherit;
+		font-size: 1em;
+		font-weight: bolder;
+		align-self: stretch;
+		color: white;
+		border: none;
+		border-radius: .3em;
+		outline: none;
+		padding: .7em 1.3em;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: rgba(0, 0, 0, .2);
+	}
+
+	&[type=warning] {
+		background-color: rgb(243, 133, 30);
+	}
+
+	&[type=fail] {
+		background-color: rgb(236, 31, 31);
+	}
+
+	&[type=success] {
+		background-color: rgb(66, 202, 84);
+	}
+
+	&[type=light] {
+		background-color: rgb(255, 255, 255);
+		color: black;
+
+		button {
+			color: black;
+		}
+	}
+
+	&[type=dark] {
+		background-color: rgb(54, 54, 54);
+	}
+}
