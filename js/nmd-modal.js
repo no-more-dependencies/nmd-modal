@@ -8,19 +8,19 @@ const msgTemplate = document.createRange().createContextualFragment(/*html*/`
 
 export default class NmdModal extends HTMLParsedElement {
 	static add() {
-		NmdModalContainer.add.apply(null, arguments);
+		return NmdModalContainer.add.apply(null, arguments);
 	}
 
 	static alert() {
-		NmdModalContainer.alert.apply(null, arguments);
+		return NmdModalContainer.alert.apply(null, arguments);
 	}
 
 	static confirm() {
-		NmdModalContainer.confirm.apply(null, arguments);
+		return NmdModalContainer.confirm.apply(null, arguments);
 	}
 
 	static prompt() {
-		NmdModalContainer.prompt.apply(null, arguments);
+		return NmdModalContainer.prompt.apply(null, arguments);
 	}
 
 	constructor() {
