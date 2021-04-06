@@ -88,7 +88,7 @@ export default class NmdModal extends HTMLParsedElement {
 			});
 		}
 		for(let rejectBtn of this.querySelectorAll("button[data-nmd-reject]")){
-			resolveBtn.addEventListener("click", (e) => {
+			rejectBtn.addEventListener("click", (e) => {
 				this.reject(JSON.parse(e.target.getAttribute("data-nmd-reject")));
 				this.close();
 			});
