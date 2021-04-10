@@ -61,6 +61,10 @@ export default class NmdModal extends HTMLParsedElement {
 		let container = this.closest("nmd-modal-container");
 		if(container)
 			container.hidden = false;
+
+		let firstInput = this.querySelector("input,select,textarea,button");
+		if(firstInput)
+			firstInput.focus();
 	}
 
 	makeButtons(){
