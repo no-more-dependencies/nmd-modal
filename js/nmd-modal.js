@@ -7,18 +7,51 @@ const msgTemplate = document.createRange().createContextualFragment(/*html*/`
 `);
 
 export default class NmdModal extends HTMLParsedElement {
+	/**
+	 * @param {string} message
+	 * @param {string} [type]
+	 * @param {string} [method]
+	 * @param {boolean} [isMessageHtml]
+	 * @param {string} [confirmLabel]
+	 * @param {string} [cancelLabel]
+	 * @returns 
+	 */
 	static add() {
 		return NmdModalContainer.add.apply(null, arguments);
 	}
 
+	/**
+	 * @param {string} message
+	 * @param {string} [type]
+	 * @param {boolean} [isMessageHtml]
+	 * @param {string} [confirmLabel]
+	 * @param {string} [cancelLabel]
+	 * @returns 
+	 */
 	static alert() {
 		return NmdModalContainer.alert.apply(null, arguments);
 	}
 
+	/**
+	 * @param {string} message
+	 * @param {string} [type]
+	 * @param {boolean} [isMessageHtml]
+	 * @param {string} [confirmLabel]
+	 * @param {string} [cancelLabel]
+	 * @returns 
+	 */
 	static confirm() {
 		return NmdModalContainer.confirm.apply(null, arguments);
 	}
 
+	/**
+	 * @param {string} message
+	 * @param {string} [type]
+	 * @param {boolean} [isMessageHtml]
+	 * @param {string} [confirmLabel]
+	 * @param {string} [cancelLabel]
+	 * @returns 
+	 */
 	static prompt() {
 		return NmdModalContainer.prompt.apply(null, arguments);
 	}
